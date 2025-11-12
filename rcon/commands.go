@@ -198,7 +198,7 @@ func (rc *RCONClient) Tell(clientNum int, message string) error {
 		return fmt.Errorf("message cannot be empty")
 	}
 
-	arg := fmt.Sprintf("%d [^5Gambling^7] %s", clientNum, message)
+	arg := fmt.Sprintf("%d %s", clientNum, message)
 	_, err := rc.SendCommand("tell", &arg)
 	return err
 }
